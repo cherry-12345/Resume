@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charan Katkam - Resume</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #2c3e50;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 15mm 18mm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .contact-info {
+            font-size: 10px;
+            color: #555;
+            margin-top: 4px;
+        }
+        
+        .contact-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        
+        /* Section Styling */
+        .section {
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2c3e50;
+            border-bottom: 1.5px solid #bdc3c7;
+            padding-bottom: 2px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Professional Summary */
+        .summary-text {
+            font-size: 10px;
+            text-align: justify;
+            line-height: 1.45;
+            color: #34495e;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            font-size: 10px;
+            line-height: 1.5;
+        }
+        
+        .skill-item {
+            margin-bottom: 3px;
+        }
+        
+        .skill-label {
+            font-weight: 600;
+            color: #2c3e50;
+            display: inline;
+        }
+        
+        .skill-value {
+            color: #555;
+            display: inline;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 10px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+        
+        .job-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .job-date {
+            font-size: 9px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .company-name {
+            font-size: 10px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+        
+        .job-responsibilities {
+            margin-left: 0;
+            padding-left: 15px;
+        }
+        
+        .job-responsibilities li {
+            font-size: 10px;
+            margin-bottom: 3px;
+            line-height: 1.4;
+            color: #34495e;
+        }
+        
+        /* Projects Section */
+        .project-item {
+            margin-bottom: 9px;
+        }
+        
+        .project-header {
+            margin-bottom: 2px;
+        }
+        
+        .project-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .project-tech {
+            font-size: 9px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .project-description {
+            margin-left: 0;
+            padding-left: 15px;
+        }
+        
+        .project-description li {
+            font-size: 10px;
+            margin-bottom: 2px;
+            line-height: 1.4;
+            color: #34495e;
+        }
+        
+        /* Education Section */
+        .education-item {
+            margin-bottom: 7px;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .degree {
+            font-size: 11px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .education-date {
+            font-size: 9px;
+            color: #7f8c8d;
+        }
+        
+        .institution {
+            font-size: 10px;
+            color: #555;
+        }
+        
+        /* Certifications */
+        .cert-list {
+            font-size: 10px;
+            line-height: 1.5;
+            color: #34495e;
+        }
+
+        .cert-list span {
+            display: block;
+        }
+
+        .cert-highlight {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        /* Achievements */
+        .achievement-list {
+            margin-left: 0;
+            padding-left: 15px;
+        }
+        
+        .achievement-list li {
+            font-size: 10px;
+            margin-bottom: 3px;
+            line-height: 1.4;
+            color: #34495e;
+        }
+        
+        /* Print Button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background: #3498db;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 15mm 18mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">📄 Print / Save as PDF</button>
+    
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">CHARAN KATKAM</h1>
+            <div class="contact-info">
+                +91 96529 47909 | <a href="mailto:charancherrykatkam@gmail.com">charancherrykatkam@gmail.com</a> | <a href="https://linkedin.com/in/charankatkam">linkedin.com/in/charankatkam</a> | Hyderabad , Telangana 
+            </div>
+        </div>
+        
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary-text">
+                Data Science & Full Stack Developer with proven track record of building AI-powered solutions that drive 35% accuracy improvements and 30% efficiency gains. Expertise in end-to-end ML pipelines, predictive analytics, and scalable web applications using Python, Java, and modern JavaScript frameworks. Combines technical depth with business impact through data-driven automation and cross-functional collaboration.
+            </p>
+        </div>
+        
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <span class="skill-label">Programming:</span>
+                    <span class="skill-value">Python, Java, SQL, JavaScript (ES6+), HTML5, CSS3, R</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Data Science & ML:</span>
+                    <span class="skill-value">Scikit-learn, Pandas, NumPy, TensorFlow, PyTorch, OpenCV, Feature Engineering, Statistical Modeling</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Web Development:</span>
+                    <span class="skill-value">React, Node.js, Next.js 14, TypeScript, REST APIs, Tailwind CSS</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Tools & Platforms:</span>
+                    <span class="skill-value">Git/GitHub, Apache Spark, Hadoop, MySQL, Jupyter, VS Code, Gradio</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">AI/Cloud:</span>
+                    <span class="skill-value">IBM Granite AI, Prompt Engineering, Oracle Cloud Infrastructure, Generative AI</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Experience -->
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <span class="job-title">AI Development Intern</span>
+                    <span class="job-date">August 2024 – October 2024</span>
+                </div>
+                <div class="company-name">SmartBridge Educational Services | Remote</div>
+                <ul class="job-responsibilities">
+                    <li>Architected <strong>SmartSDLC</strong>, an AI-powered SDLC automation platform using Python and IBM Granite AI, reducing bug detection time by <strong>30%</strong> and accelerating code generation cycles</li>
+                    <li>Engineered 6 modular NLP features including automated requirements classification, defect prediction, and test case generation, processing <strong>500+ development tasks</strong> with 92% accuracy</li>
+                    <li>Deployed Gradio-based chatbot interface delivering real-time code analysis, cutting manual review time by <strong>40%</strong></li>
+                    <li>Collaborated cross-functionally with 5-member team to integrate CI/CD pipelines, improving deployment efficiency by <strong>25%</strong></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">AJ Abhi Jewels – E-commerce Platform</span>
+                    <span class="project-tech">Next.js 14, TypeScript, Tailwind CSS, REST APIs</span>
+                </div>
+                <ul class="project-description">
+                    <li>Built enterprise-grade luxury jewelry platform with <strong>&lt;2-second load time</strong>, achieving 95+ PageSpeed score through optimized code splitting</li>
+                    <li>Implemented shopping cart, wishlist, and admin dashboard managing <strong>1,000+ SKUs</strong> with real-time inventory tracking</li>
+                    <li>Designed mobile-first responsive UI serving <strong>10K+ monthly users</strong> with 0% critical accessibility violations (WCAG 2.1 AA)</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">Air Cursor – Gesture-Controlled Interface</span>
+                    <span class="project-tech">Python, OpenCV, Computer Vision, MediaPipe</span>
+                </div>
+                <ul class="project-description">
+                    <li>Developed hands-free navigation system using real-time hand gesture recognition, achieving <strong>95% accuracy</strong> across 12 gesture commands</li>
+                    <li>Reduced input latency to <strong>&lt;50ms</strong> through optimized frame processing pipeline, enhancing accessibility for users with limited mobility</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">Music Streaming Web Application</span>
+                    <span class="project-tech">HTML5, CSS3, JavaScript, Node.js, Express</span>
+                </div>
+                <ul class="project-description">
+                    <li>Created full-stack streaming platform with personalized playlist engine serving <strong>500+ tracks</strong></li>
+                    <li>Implemented RESTful API handling <strong>5K+ requests/day</strong> with &lt;100ms average response time</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="degree">Bachelor of Technology, Computer Science & Engineering (AI Specialization)</span>
+                    <span class="education-date">2022 – 2026</span>
+                </div>
+                <div class="institution">G. Pullaiah College of Engineering and Technology | <strong>CGPA: 7.5/10</strong></div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="degree">Pre-University Course (PUC), Science</span>
+                    <span class="education-date">2019 – 2021</span>
+                </div>
+                <div class="institution">Sri Chaitanya Jr. College, Hyderabad | <strong>91%</strong></div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="degree">SSLC</span>
+                    <span class="education-date">2018 – 2019</span>
+                </div>
+                <div class="institution">Manasa High School, Jagtial  | <strong>93%</strong></div>
+            </div>
+        </div>
+        
+        <!-- Certifications & Achievements -->
+        <div class="section">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="cert-list">
+                <span class="cert-highlight">Oracle Cloud Infrastructure 2025 Generative AI Professional</span> <span class="cert-highlight">Prompt Engineering (Columbia+)</span> <span class="cert-highlight">Generative AI with IBM Cloud</span> <span class="cert-highlight">LinguaSkill English Certification (Cambridge University)</span> <span class="cert-highlight">Java Full Stack Development (SkillDzire)</span> <span class="cert-highlight">AI Data Quality Analyst (Rooman Technologies)</span>
+            </div>
+            <ul class="achievement-list">
+                <li>Selected for <strong>Aspire Leaders Program</strong>, a competitive global leadership initiative with &lt;5% acceptance rate</li>
+                <li>Recognized with <strong>Innovation Award</strong> at SmartBridge for AI automation impact during internship</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
